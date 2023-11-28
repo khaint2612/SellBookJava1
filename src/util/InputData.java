@@ -33,6 +33,6 @@ public class InputData {
 
     public static String inputString(String msg, Scanner scanner){
             System.out.println(msg);
-            return scanner.nextLine();
+            return scanner.next();
     }
 }
