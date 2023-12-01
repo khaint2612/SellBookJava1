@@ -24,8 +24,7 @@ public class ListBook {
         while (true) {
             String authorNameFound = InputData.inputString("Enter author name:", scanner);
             if (authorNameFound.isEmpty()) {
-                ListAuthor listAuthor = new ListAuthor();
-                listAuthor.authorToList();
+                authors.add(new Author(InputData.inputString("Enter new author:", scanner)));
                 continue;
             }
             if (authors.stream().anyMatch(a -> a.getName().equals(authorNameFound))) {
@@ -38,8 +37,15 @@ public class ListBook {
         books.add(book);
     }
 
-    public void addBookToList(){
-        
+    public void addBookToList(List<Author> authors){
+        while (true) {
+            addBook(authors);
+            System.out.println("Do you want continue");
+            int choice = InputData.inputInteger("Enter choice", scanner);
+            if(choice != 1){
+                break;
+            }
+        }
     }
 
     public void showListBook() {
