@@ -124,4 +124,13 @@ public class ListBook {
             }
         } while (true);
     }
+
+    public void removeBook() {
+        System.out.println("Remove book");
+        String title = InputData.inputString("Enter book title need remove", scanner);
+        int check = books.size();
+        books.remove(findBook(title));
+        if (check == books.size())
+            System.out.println("Title book don't exist");
+    }
 }
