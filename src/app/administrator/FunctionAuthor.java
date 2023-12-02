@@ -1,4 +1,4 @@
-package app;
+package app.administrator;
 
 import java.util.Scanner;
 
@@ -7,10 +7,10 @@ import util.InputData;
 
 public class FunctionAuthor {
 
-    public static void MenuAuthor() {
-        Scanner scanner = new Scanner(System.in);
+    ListAuthor authorList = new ListAuthor();
 
-        ListAuthor authorList = new ListAuthor();
+    public void MenuAuthor() {
+        Scanner scanner = new Scanner(System.in);
         int choice;
         do {
             System.out.println("Menu Author:");
